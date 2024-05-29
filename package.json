@@ -1,0 +1,22 @@
+{
+	"name": "finApp",
+	"version": "1.0.0",
+	"main": "index.js",
+	"repository": "https://github.com/ginkotte/finApp.git",
+	"author": "Gustavo Inkotte <gus.inkotte@gmail.com>",
+	"license": "MIT",
+	"scripts": {
+		"dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules --respawn src/server.ts"
+	},
+	"dependencies": {
+		"express": "^4.19.2",
+		"express-async-errors": "^3.1.1"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^1.7.3",
+		"@types/express": "^4.17.21",
+		"@types/node": "^20.12.12",
+		"ts-node-dev": "^2.0.0",
+		"typescript": "^5.4.5"
+	}
+}
