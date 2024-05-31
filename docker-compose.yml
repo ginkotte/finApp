@@ -1,0 +1,30 @@
+version: "3.7"
+
+services:
+  database_finapp:
+    image: postgres
+    container_name: database_finapp
+    restart: always
+    ports:
+      - 5433:5432
+    environment:
+      - POSTGRES_USER=docker
+      - POSTGRES_PASSWORD=devPwd
+      - POSTGRES_DB=finapp
+    volumes:
+      - pgdata:/data/postgres
+  app:
+    build: .
+    container_name: finApp
+    ports: 
+      - 3050:3050
+    volumes:
+      - .:/usr/app
+    links:
+      - database_finapp
+    depends_on:
+      - database_finapp
+
+volumes:
+  pgdata:
+    driver: local
